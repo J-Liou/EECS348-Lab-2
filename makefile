@@ -8,5 +8,7 @@ program: $(OBJECTS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+.PHONY: all clean
+
 clean:
-	rm -rf *.o 
+	rm -rf *.o program
