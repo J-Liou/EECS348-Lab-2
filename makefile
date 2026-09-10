@@ -1,9 +1,10 @@
 CC=gcc
 CFLAGS=-c -Wall
 all: program
+OBJECTS = main.o isEven.o isOdd.o
 
-program: main.o isEven.o isOdd.o
-	$(CC) main.o isEven.o isOdd.o -o program
+program: $(OBJECTS)
+	$(CC) $(OBJECTS) -o program
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
